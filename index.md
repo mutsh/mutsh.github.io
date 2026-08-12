@@ -1,4 +1,4 @@
-# Mutiullah Shaikh - AI Engineer Portfolio
+# Mutiullah Shaikh
 
 > AI & Software Engineer building reliable LLM, RAG, multi-agent, and production AI systems.
 
@@ -84,80 +84,6 @@ An automated multi-agent platform for evidence-driven research and information e
 - Cisco Certified Network Associate (CCNA)
 
 ---
-
-# Build and Publish This Portfolio
-
-The simplest route is **GitHub Pages + a Jekyll theme**. It is free and does not require a server.
-
-## Theme Choices
-
-Choose one theme by changing a single line in `_config.yml`:
-
-| Theme | Best for | `_config.yml` value |
-| --- | --- | --- |
-| Cayman | Modern blue landing page - recommended | `theme: jekyll-theme-cayman` |
-| Minimal | Clean and professional | `theme: jekyll-theme-minimal` |
-| Midnight | Dark technology look | `theme: jekyll-theme-midnight` |
-
-## Step 1 - Create the GitHub Repository
-
-1. Sign in at [github.com](https://github.com).
-2. Click **New repository**.
-3. Name it exactly `mutsh.github.io`.
-4. Select **Public**.
-5. Tick **Add a README file**.
-6. Click **Create repository**.
-
-Your website address will be: `https://mutsh.github.io`
-
-## Step 2 - Add the Portfolio Homepage
-
-1. In the new repository, click **Add file > Create new file**.
-2. Name the file `index.md`.
-3. Copy everything from the top of this document, starting at `# Mutiullah Shaikh`, and stop before `# Build and Publish This Portfolio`.
-4. Click **Commit changes**.
-
-## Step 3 - Add a Theme
-
-1. Click **Add file > Create new file** again.
-2. Name the file `_config.yml`.
-3. Paste:
-
-```yaml
-title: Mutiullah Shaikh
-description: AI Engineer | LLMs | RAG | Multi-Agent Systems | Responsible AI
-theme: jekyll-theme-cayman
-show_downloads: false
-```
-
-4. Commit the file.
-
-To use a different theme later, replace `jekyll-theme-cayman` with `jekyll-theme-minimal` or `jekyll-theme-midnight`.
-
-## Step 4 - Publish with GitHub Pages
-
-1. Open the repository's **Settings**.
-2. In the left menu, click **Pages**.
-3. Under **Build and deployment**, select **Deploy from a branch**.
-4. Select branch **main** and folder **/(root)**.
-5. Click **Save**.
-6. Wait 2-10 minutes, then open `https://mutsh.github.io`.
-
-## Step 5 - Improve the Portfolio
-
-Add these items next:
-
-1. A professional profile photo saved as `assets/profile.jpg`.
-2. One screenshot or architecture diagram for each featured project.
-3. A downloadable CV named `Mutiullah_Shaikh_CV.pdf`.
-4. Short project case studies covering the problem, architecture, evaluation, results, and lessons learned.
-5. GitHub repository links with complete documentation and working demos.
-
-To link your CV from `index.md`, add:
-
-```markdown
-[Download my CV](./Mutiullah_Shaikh_CV.pdf)
-```
 
 ## Recommended Repository Structure
 
