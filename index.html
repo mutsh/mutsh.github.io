@@ -7,7 +7,7 @@
 <meta name="description" content="AI engineer and researcher building trustworthy LLM, RAG and multi-agent systems for healthcare, cybersecurity and digital infrastructure. Based in Odense, Denmark.">
 <meta property="og:title" content="Mutiullah Shaikh, PhD · AI Engineer">
 <meta property="og:description" content="Trustworthy LLM, RAG and multi-agent systems for healthcare and security.">
-<meta property="og:image" content="https://avatars.githubusercontent.com/u/190137567?v=4">
+<meta property="og:image" content="https://mutsh.github.io/assets/profile.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
@@ -68,7 +68,7 @@ p { margin: 0 0 1rem; }
 .hero { padding: clamp(3rem, 8vw, 6.5rem) 0 clamp(3rem, 7vw, 5rem); }
 .hero .wrap { display: grid; grid-template-columns: 1.15fr .85fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
 .who { display: flex; align-items: center; gap: .9rem; margin-bottom: 1.75rem; }
-.who img { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 2px solid var(--surface); box-shadow: 0 0 0 2px var(--pine); }
+.who img { width: 88px; height: 88px; border-radius: 50%; object-fit: cover; border: 2px solid var(--surface); box-shadow: 0 0 0 2px var(--pine); }
 .who strong { display: block; font-size: 1.05rem; }
 .who span { color: var(--muted); font-size: .95rem; }
 .hero h1 { font-size: clamp(2.5rem, 6.2vw, 4.6rem); font-weight: 800; letter-spacing: -0.035em; line-height: 1.02; max-width: 13ch; }
@@ -232,7 +232,7 @@ footer { padding: 1.5rem 0 2.5rem; color: var(--muted); font-size: .9rem; }
   <div class="wrap">
     <div>
       <div class="who">
-        <img src="https://avatars.githubusercontent.com/u/190137567?v=4" alt="Portrait of Mutiullah Shaikh">
+        <img src="assets/profile.jpg" alt="Portrait of Mutiullah Shaikh">
         <div><strong>Mutiullah Shaikh, PhD</strong><span>AI &amp; software engineer in Odense, Denmark</span></div>
       </div>
       <h1>I build AI that people can check.</h1>
@@ -321,6 +321,17 @@ footer { padding: 1.5rem 0 2.5rem; color: var(--muted); font-size: .9rem; }
           <p>Intrusion-detection models for IoT and medical devices whose alerts come with explanations an analyst can act on.</p>
           <p class="stack">XAI, machine learning, IoT security</p>
         </div>
+      </div>
+    </div>
+
+    <div class="group">
+      <h3>Agents for business operations<small>Customer-facing assistants with humans in control</small></h3>
+      <div class="projects">
+        <div class="project">
+          <h4><a href="https://github.com/mutsh/DealerFlow-AI" target="_blank" rel="noopener noreferrer">DealerFlow AI</a></h4>
+          <p>A service-booking agent for car-dealership workshops, working over web chat, SMS and WhatsApp. The language model only interprets the request; pricing, availability and bookings come from deterministic tools, every booking needs the customer's explicit yes, and safety complaints go straight to a person. Includes a manager dashboard, PII-redacted tracing, CI tests and an Azure deployment plan.</p>
+          <p class="stack">FastAPI, Qwen 2.5 (optional local router), Twilio, Docker, GitHub Actions, Azure</p>
+        </div>
         <div class="project">
           <h4><a href="https://github.com/mutsh/Customer_Feedback_Agent_RAG" target="_blank" rel="noopener noreferrer">Customer feedback RAG agent</a></h4>
           <p>Turns large collections of customer feedback into fast answers that cite the original comments.</p>
@@ -356,13 +367,14 @@ footer { padding: 1.5rem 0 2.5rem; color: var(--muted); font-size: .9rem; }
     </div>
 
     <details class="repos">
-      <summary>All public repositories (18)</summary>
+      <summary>All public repositories (19)</summary>
       <ul>
         <li><a href="https://github.com/mutsh/HealthProofAI-Responsible-LLM-RAG-EmergencyTriage">HealthProofAI</a> <span>Responsible LLM-RAG triage</span></li>
         <li><a href="https://github.com/mutsh/VANTAGE">VANTAGE</a> <span>Multi-agent threat intelligence</span></li>
         <li><a href="https://github.com/mutsh/CareSense_Agnetic_AI">CareSense_Agnetic_AI</a> <span>Clinical evidence agents</span></li>
         <li><a href="https://github.com/mutsh/explainable-rag-mcp">explainable-rag-mcp</a> <span>Explainable RAG and MCP</span></li>
         <li><a href="https://github.com/mutsh/HealthMate_AI">HealthMate_AI</a> <span>Health assistant agent</span></li>
+        <li><a href="https://github.com/mutsh/DealerFlow-AI">DealerFlow-AI</a> <span>Dealership service-booking agent</span></li>
         <li><a href="https://github.com/mutsh/AI-Agents">AI-Agents</a> <span>Agent implementations</span></li>
         <li><a href="https://github.com/mutsh/AI-Blockchain">AI-Blockchain</a> <span>AI predictions with on-chain audit</span></li>
         <li><a href="https://github.com/mutsh/Customer_Feedback_Agent_RAG">Customer_Feedback_Agent_RAG</a> <span>Feedback analysis with RAG</span></li>
@@ -392,7 +404,7 @@ footer { padding: 1.5rem 0 2.5rem; color: var(--muted); font-size: .9rem; }
       <div class="skill"><h3>Machine learning</h3><p><b>Python, PyTorch, TensorFlow, Hugging Face Transformers</b>, fine-tuning (including vision-language models), scikit-learn, pandas, NumPy, knowledge graphs, Bayesian inference</p></div>
       <div class="skill"><h3>Evaluation and trustworthy AI</h3><p><b>Groundedness, faithfulness and hallucination checks</b>, retrieval evaluation, NLI, explainable AI, bias and fairness testing, guardrails, human-in-the-loop, EU AI Act and GDPR alignment</p></div>
       <div class="skill"><h3>Data and retrieval</h3><p><b>SQL, vector databases (ChromaDB)</b>, embeddings, MySQL, Oracle, Power BI, FHIR, MIMIC-IV</p></div>
-      <div class="skill"><h3>Engineering and delivery</h3><p><b>Docker, GitHub Actions, CI/CD, Azure</b>, Flask and REST APIs, LangSmith, Ollama, n8n, Claude Code; Java, JavaScript, React, C/C++, R</p></div>
+      <div class="skill"><h3>Engineering and delivery</h3><p><b>Docker, GitHub Actions, CI/CD, Azure</b>, FastAPI, Flask and REST APIs, Twilio, LangSmith, Ollama, n8n, Claude Code; Java, JavaScript, React, C/C++, R</p></div>
       <div class="skill"><h3>Blockchain and security</h3><p><b>Solidity, smart contracts, Ethereum, zkEVM</b>, cryptography, network security, SIEM monitoring, incident response</p></div>
       <div class="skill"><h3>Project leadership</h3><p><b>PMP-certified delivery</b> of large digital-transformation programmes with Ernst &amp; Young, ServiceNow change management, stakeholder workshops and training</p></div>
       <div class="skill"><h3>Certifications</h3><p><b>PMP, CISA, CCNA</b>, Hugging Face LLM course, AI Agents (365 Data Science), Anthropic: Building with the Claude API, Model Context Protocol, AI Fluency</p></div>
