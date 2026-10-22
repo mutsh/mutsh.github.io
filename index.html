@@ -142,6 +142,23 @@ details.repos li { break-inside: avoid; padding: .45rem 0; border-top: 1px solid
 details.repos li a { font-weight: 600; }
 details.repos li span { color: var(--muted); }
 
+
+/* Delivery method */
+.record { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule); margin-bottom: 2.5rem; }
+.record div { padding: 1.25rem 1.5rem 1.25rem 0; }
+.record div + div { padding-left: 1.5rem; border-left: 1px solid var(--rule); }
+.record strong { display: block; font-size: 1.15rem; font-weight: 700; margin-bottom: .25rem; }
+.record span { color: var(--muted); font-size: .95rem; }
+.method { list-style: none; margin: 0; padding: 0; counter-reset: m; }
+.method li { counter-increment: m; display: grid; grid-template-columns: 260px 1fr; gap: 2rem; padding: 1.4rem 0; border-top: 1px solid var(--rule); }
+.method h3 { font-size: 1.15rem; display: flex; gap: .75rem; align-items: baseline; }
+.method h3::before { content: counter(m); display: inline-grid; place-items: center; width: 30px; height: 30px; flex: none; border-radius: 6px; background: var(--pine); color: var(--on-pine); font-size: .9rem; font-weight: 800; }
+.method li:first-child { border-top: 0; padding-top: 0; }
+.method li:last-child h3::before { background: var(--signal); color: #17242B; }
+.method p { margin: 0 0 .4rem; max-width: 66ch; }
+.method .proof { color: var(--muted); font-size: .95rem; margin: 0; }
+@media (max-width: 900px) { .record { grid-template-columns: 1fr; } .record div + div { padding-left: 0; border-left: 0; border-top: 1px solid var(--rule); } .method li { grid-template-columns: 1fr; gap: .5rem; } }
+
 /* Skills */
 .skills { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 3rem; }
 .skill { padding: 1.25rem 0; border-top: 1px solid var(--rule); }
@@ -218,6 +235,7 @@ footer { padding: 1.5rem 0 2.5rem; color: var(--muted); font-size: .9rem; }
     <a class="mark" href="#top">Mutiullah Shaikh</a>
     <nav aria-label="Sections">
       <a href="#work">Work</a>
+      <a href="#delivery">Delivery</a>
       <a href="#skills">Skills</a>
       <a href="#experience">Experience</a>
       <a href="#publications">Publications</a>
@@ -395,6 +413,27 @@ footer { padding: 1.5rem 0 2.5rem; color: var(--muted); font-size: .9rem; }
         <li><a href="https://github.com/mutsh/mutsh.github.io">mutsh.github.io</a> <span>This website</span></li>
       </ul>
     </details>
+  </div>
+</section>
+
+<section id="delivery">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>How I deliver AI</h2>
+      <p>Most AI projects stall between demo and daily use. I run them like the enterprise programmes I led for eight years: clear scope, controlled risk, measured outcomes.</p>
+    </div>
+    <div class="record">
+      <div><strong>4 large-scale programmes</strong><span>Digital transformation and automation, delivered with Ernst &amp; Young</span></div>
+      <div><strong>20 enterprise AI solutions</strong><span>Architected, supporting $2M in business processes</span></div>
+      <div><strong>PMP and CISA certified</strong><span>Delivery discipline and audit-ready controls</span></div>
+    </div>
+    <ol class="method">
+      <li><h3>Find the real workflow</h3><div><p>Start from how the work is done today, with the people who do it, and pick the step where AI removes the most friction.</p><p class="proof">Stakeholder workshops in government programmes and at SDU; DealerFlow AI is designed around a workshop's actual booking lifecycle.</p></div></li>
+      <li><h3>Design for control</h3><div><p>The model reads and writes language. Business facts, compliance checks and anything irreversible stay in deterministic code, with a person approving what matters.</p><p class="proof">Confirm-before-write bookings in DealerFlow AI; rule-based document checks and recruiter approval in Recruitment AI Ops.</p></div></li>
+      <li><h3>Pilot behind a clean boundary</h3><div><p>Run on safe data first, with a single integration seam so the pilot can be swapped onto the client's real systems without a rewrite.</p><p class="proof">DealerFlow's dealership adapter; the n8n and Odoo production mapping in Recruitment AI Ops.</p></div></li>
+      <li><h3>Measure before scaling</h3><div><p>Agree the success measures up front and evaluate against them, not against a demo that looked good.</p><p class="proof">HealthProofAI's retrieval, faithfulness and audit metrics; DealerFlow's KPI set, including a 0% duplicate-booking target.</p></div></li>
+      <li><h3>Govern and hand over</h3><div><p>Trace every decision, protect personal data and leave the client a system their team can run, change and audit.</p><p class="proof">Blockchain audit trails and EU AI Act and GDPR work in my research; PII-redacted tracing and an Azure rollout plan in DealerFlow; ServiceNow change management.</p></div></li>
+    </ol>
   </div>
 </section>
 
