@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mutiullah Shaikh, PhD · AI Engineer</title>
+<meta name="description" content="AI engineer and researcher building trustworthy LLM, RAG and multi-agent systems for healthcare, cybersecurity and digital infrastructure. Based in Odense, Denmark.">
+<meta property="og:title" content="Mutiullah Shaikh, PhD · AI Engineer">
+<meta property="og:description" content="Trustworthy LLM, RAG and multi-agent systems for healthcare and security.">
+<meta property="og:image" content="https://avatars.githubusercontent.com/u/190137567?v=4">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #EEF1EE;
+  --surface: #FBFCFB;
+  --ink: #17242B;
+  --muted: #55646B;
+  --rule: #C7D1CC;
+  --pine: #1E5A4C;
+  --pine-deep: #143F35;
+  --signal: #E3B23C;
+  --on-pine: #F3F6F4;
+  --max: 1120px;
+  --gutter: clamp(16px, 4vw, 40px);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #121B1F;
+    --surface: #18242A;
+    --ink: #E6ECE9;
+    --muted: #9AAAA6;
+    --rule: #2D3D41;
+    --pine: #5FB39C;
+    --pine-deep: #1B4A3F;
+    --signal: #E8BE55;
+    --on-pine: #F3F6F4;
+  }
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Schibsted Grotesk", system-ui, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  font-feature-settings: "ss01";
+}
+a { color: inherit; text-decoration-color: var(--signal); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+a:hover { color: var(--pine); }
+:focus-visible { outline: 3px solid var(--signal); outline-offset: 3px; border-radius: 2px; }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+h1, h2, h3 { line-height: 1.1; margin: 0; letter-spacing: -0.02em; }
+p { margin: 0 0 1rem; }
+
+/* Header */
+.site-head { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--paper) 92%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--rule); }
+.site-head .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 60px; }
+.mark { font-weight: 800; text-decoration: none; letter-spacing: -0.01em; }
+.site-head nav { display: flex; gap: 1.25rem; font-size: .95rem; font-weight: 500; }
+.site-head nav a { text-decoration: none; color: var(--muted); }
+.site-head nav a:hover { color: var(--ink); }
+
+/* Hero */
+.hero { padding: clamp(3rem, 8vw, 6.5rem) 0 clamp(3rem, 7vw, 5rem); }
+.hero .wrap { display: grid; grid-template-columns: 1.15fr .85fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+.who { display: flex; align-items: center; gap: .9rem; margin-bottom: 1.75rem; }
+.who img { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 2px solid var(--surface); box-shadow: 0 0 0 2px var(--pine); }
+.who strong { display: block; font-size: 1.05rem; }
+.who span { color: var(--muted); font-size: .95rem; }
+.hero h1 { font-size: clamp(2.5rem, 6.2vw, 4.6rem); font-weight: 800; letter-spacing: -0.035em; line-height: 1.02; max-width: 13ch; }
+.hero .lede { font-size: clamp(1.1rem, 1.6vw, 1.25rem); color: var(--muted); max-width: 52ch; margin: 1.5rem 0 2rem; }
+.actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+.btn { display: inline-flex; align-items: center; min-height: 46px; padding: 0 1.2rem; border-radius: 6px; font-weight: 700; text-decoration: none; border: 2px solid var(--ink); color: var(--ink); }
+.btn:hover { background: var(--ink); color: var(--paper); }
+.btn.primary { background: var(--pine); border-color: var(--pine); color: var(--on-pine); }
+.btn.primary:hover { background: var(--pine-deep); border-color: var(--pine-deep); color: var(--on-pine); }
+
+/* Proof chain (hero visual) */
+.chain { margin: 0; background: var(--surface); border: 1px solid var(--rule); border-radius: 14px; padding: 1.5rem 1.5rem 1.25rem; }
+.chain-title { font-size: .9rem; color: var(--muted); margin-bottom: 1rem; }
+.chain ol { list-style: none; margin: 0; padding: 0; position: relative; }
+.chain li { position: relative; display: grid; grid-template-columns: 44px 1fr; gap: .9rem; padding-bottom: 1.15rem; }
+.chain li:last-child { padding-bottom: 0; }
+.chain li::before { content: ""; position: absolute; left: 21px; top: 44px; bottom: 0; width: 2px; background: var(--signal); transform-origin: top; }
+.chain li:last-child::before { display: none; }
+.block { width: 44px; height: 44px; border-radius: 8px; background: var(--pine); color: var(--on-pine); display: grid; place-items: center; font-weight: 800; }
+.chain li:last-child .block { background: var(--signal); color: #17242B; }
+.chain h3 { font-size: 1.05rem; margin: .1rem 0 .15rem; }
+.chain p { font-size: .93rem; color: var(--muted); margin: 0; line-height: 1.45; }
+.chain-foot { margin: 1.5rem 0 0; padding-top: 1rem; border-top: 1px dashed var(--rule); font-size: .9rem; color: var(--muted); }
+@media (prefers-reduced-motion: no-preference) {
+  .chain .block { animation: lift .5s cubic-bezier(.2,.7,.2,1) both; }
+  .chain li::before { animation: link .4s ease-out both; }
+  .chain li:nth-child(1) .block { animation-delay: .15s; }
+  .chain li:nth-child(1)::before { animation-delay: .45s; }
+  .chain li:nth-child(2) .block { animation-delay: .6s; }
+  .chain li:nth-child(2)::before { animation-delay: .9s; }
+  .chain li:nth-child(3) .block { animation-delay: 1.05s; }
+  .chain li:nth-child(3)::before { animation-delay: 1.35s; }
+  .chain li:nth-child(4) .block { animation-delay: 1.5s; }
+  @keyframes lift { from { opacity: 0; transform: translateY(8px) scale(.9); } to { opacity: 1; transform: none; } }
+  @keyframes link { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+}
+
+/* Sections */
+section { padding: clamp(3.5rem, 7vw, 5.5rem) 0; border-top: 1px solid var(--rule); scroll-margin-top: 60px; }
+.sec-head { display: grid; grid-template-columns: 260px 1fr; gap: 2rem; margin-bottom: 2.5rem; align-items: end; }
+.sec-head h2 { font-size: clamp(1.9rem, 3.4vw, 2.6rem); font-weight: 800; }
+.sec-head p { color: var(--muted); margin: 0; max-width: 60ch; }
+
+/* Lead project */
+.lead { background: var(--pine); color: var(--on-pine); border-radius: 14px; padding: clamp(1.5rem, 4vw, 2.75rem); display: grid; grid-template-columns: 1.2fr 1fr; gap: 2.5rem; margin-bottom: 3rem; }
+.lead h3 { font-size: clamp(1.7rem, 3vw, 2.3rem); font-weight: 800; margin-bottom: .75rem; }
+.lead p { opacity: .92; max-width: 54ch; }
+.lead .stack { font-size: .93rem; opacity: .8; margin-bottom: 1.5rem; }
+.lead .btn { border-color: var(--on-pine); color: var(--on-pine); }
+.lead .btn:hover { background: var(--on-pine); color: var(--pine-deep); }
+.results { display: grid; gap: 0; align-content: center; }
+.results div { padding: 1rem 0; border-top: 1px solid color-mix(in srgb, var(--on-pine) 28%, transparent); display: grid; grid-template-columns: 7.5rem 1fr; gap: 1rem; align-items: baseline; }
+.results div:first-child { border-top: 0; }
+.results strong { font-size: 2rem; font-weight: 800; color: var(--signal); letter-spacing: -0.02em; }
+.results span { font-size: .95rem; opacity: .9; }
+
+.group { display: grid; grid-template-columns: 260px 1fr; gap: 2rem; padding: 1.75rem 0; border-top: 1px solid var(--rule); }
+.group > h3 { font-size: 1.15rem; font-weight: 700; }
+.group > h3 small { display: block; font-weight: 400; color: var(--muted); font-size: .92rem; margin-top: .35rem; line-height: 1.4; }
+.projects { display: grid; grid-template-columns: 1fr 1fr; gap: 1.75rem 2.5rem; }
+.project h4 { margin: 0 0 .35rem; font-size: 1.1rem; }
+.project h4 a { text-decoration: none; }
+.project h4 a:hover { text-decoration: underline; text-decoration-color: var(--signal); }
+.project p { color: var(--muted); font-size: .97rem; margin-bottom: .45rem; }
+.project .stack { font-size: .88rem; color: var(--pine); font-weight: 600; margin: 0; }
+
+details.repos { margin-top: 2.5rem; border: 1px solid var(--rule); border-radius: 10px; background: var(--surface); }
+details.repos summary { cursor: pointer; padding: 1rem 1.25rem; font-weight: 700; list-style-position: inside; }
+details.repos ul { list-style: none; margin: 0; padding: 0 1.25rem 1.25rem; columns: 2; column-gap: 2.5rem; }
+details.repos li { break-inside: avoid; padding: .45rem 0; border-top: 1px solid var(--rule); font-size: .95rem; }
+details.repos li a { font-weight: 600; }
+details.repos li span { color: var(--muted); }
+
+/* Skills */
+.skills { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 3rem; }
+.skill { padding: 1.25rem 0; border-top: 1px solid var(--rule); }
+.skill h3 { font-size: 1.05rem; margin-bottom: .5rem; }
+.skill p { margin: 0; color: var(--muted); font-size: .97rem; }
+.skill p b { color: var(--ink); font-weight: 600; }
+.learning { margin-top: 2rem; padding: 1.25rem 1.5rem; border-left: 4px solid var(--signal); background: var(--surface); border-radius: 0 10px 10px 0; }
+.learning h3 { font-size: 1.05rem; margin-bottom: .35rem; }
+.learning p { margin: 0; color: var(--muted); }
+
+/* Experience timeline */
+.timeline { list-style: none; margin: 0; padding: 0; }
+.timeline li { display: grid; grid-template-columns: 260px 1fr; gap: 2rem; padding: 1.6rem 0; border-top: 1px solid var(--rule); }
+.when { color: var(--muted); font-size: .95rem; }
+.when b { display: block; color: var(--ink); font-weight: 600; }
+.timeline h3 { font-size: 1.2rem; margin-bottom: .2rem; }
+.timeline .org { color: var(--pine); font-weight: 600; margin-bottom: .6rem; }
+.timeline ul { margin: 0; padding-left: 1.1rem; color: var(--muted); max-width: 70ch; }
+.timeline ul li { display: list-item; padding: .15rem 0; border: 0; }
+
+/* Publications */
+.pubs { list-style: none; margin: 0; padding: 0; }
+.pubs li { display: grid; grid-template-columns: 260px 1fr; gap: 2rem; padding: 1.1rem 0; border-top: 1px solid var(--rule); }
+.pubs .yr { font-weight: 800; font-size: 1.35rem; color: var(--pine); }
+.pubs .t { font-weight: 600; display: block; max-width: 72ch; }
+.pubs .v { color: var(--muted); font-size: .95rem; }
+
+.trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
+.trio h3 { font-size: 1.15rem; margin-bottom: .9rem; padding-bottom: .6rem; border-bottom: 2px solid var(--ink); }
+.trio ul { list-style: none; margin: 0; padding: 0; }
+.trio li { padding: .5rem 0; color: var(--muted); font-size: .97rem; line-height: 1.45; }
+.trio li b { color: var(--ink); font-weight: 600; display: block; }
+
+/* Contact */
+.contact { background: var(--ink); color: var(--paper); border-top: 0; }
+.contact .wrap { display: grid; grid-template-columns: 1.1fr 1fr; gap: 3rem; align-items: start; }
+.contact h2 { font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 800; letter-spacing: -0.03em; max-width: 12ch; }
+.contact p { color: color-mix(in srgb, var(--paper) 75%, transparent); max-width: 46ch; margin-top: 1.25rem; }
+.links { list-style: none; margin: 0; padding: 0; }
+.links li { display: grid; grid-template-columns: 9rem 1fr; gap: 1rem; padding: .85rem 0; border-top: 1px solid color-mix(in srgb, var(--paper) 20%, transparent); }
+.links li:first-child { border-top: 0; }
+.links span { color: color-mix(in srgb, var(--paper) 65%, transparent); }
+.links a { font-weight: 600; word-break: break-word; }
+.links a:hover { color: var(--signal); }
+@media (prefers-color-scheme: dark) {
+  .contact { background: #0A1114; color: var(--ink); }
+  .contact p { color: var(--muted); }
+  .links span { color: var(--muted); }
+  .links li { border-color: var(--rule); }
+}
+footer { padding: 1.5rem 0 2.5rem; color: var(--muted); font-size: .9rem; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero .wrap, .lead, .contact .wrap { grid-template-columns: 1fr; }
+  .sec-head, .group, .timeline li, .pubs li { grid-template-columns: 1fr; gap: .5rem; }
+  .sec-head { gap: .75rem; }
+  .projects, .skills { grid-template-columns: 1fr; }
+  .trio { grid-template-columns: 1fr; gap: 2rem; }
+  details.repos ul { columns: 1; }
+  .site-head nav { display: none; }
+}
+@media (max-width: 480px) {
+  .results div { grid-template-columns: 6rem 1fr; }
+  .links li { grid-template-columns: 1fr; gap: .1rem; }
+  .btn { width: 100%; justify-content: center; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="mark" href="#top">Mutiullah Shaikh</a>
+    <nav aria-label="Sections">
+      <a href="#work">Work</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#publications">Publications</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <div class="who">
+        <img src="https://avatars.githubusercontent.com/u/190137567?v=4" alt="Portrait of Mutiullah Shaikh">
+        <div><strong>Mutiullah Shaikh, PhD</strong><span>AI &amp; software engineer in Odense, Denmark</span></div>
+      </div>
+      <h1>I build AI that people can check.</h1>
+      <p class="lede">LLM, RAG and multi-agent systems for healthcare, cybersecurity and public infrastructure, designed so every answer can be traced to its evidence and every decision can be audited. PhD in software engineering from the University of Southern Denmark, and eight years delivering public-sector digital transformation before that.</p>
+      <div class="actions">
+        <a class="btn primary" href="#work">See my work</a>
+        <a class="btn" href="mailto:mutishaikh@live.com">Email me</a>
+      </div>
+    </div>
+
+    <figure class="chain" aria-label="How HealthProofAI makes an answer trustworthy">
+      <figcaption class="chain-title">How a HealthProofAI triage answer earns trust</figcaption>
+      <ol>
+        <li><div class="block" aria-hidden="true">1</div><div><h3>Retrieve</h3><p>Pull the clinical guidelines that apply to this patient.</p></div></li>
+        <li><div class="block" aria-hidden="true">2</div><div><h3>Ground</h3><p>Generate the recommendation only from what was retrieved.</p></div></li>
+        <li><div class="block" aria-hidden="true">3</div><div><h3>Verify</h3><p>Check the answer against its sources with natural-language inference and fairness tests.</p></div></li>
+        <li><div class="block" aria-hidden="true">4</div><div><h3>Record</h3><p>Write a tamper-evident audit entry to a blockchain ledger.</p></div></li>
+      </ol>
+      <p class="chain-foot">The same pattern runs through most of my projects.</p>
+    </figure>
+  </div>
+</div>
+
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Selected work</h2>
+      <p>Research systems and engineering projects, grouped by the problem they solve. Titles with links open the source code on GitHub.</p>
+    </div>
+
+    <article class="lead">
+      <div>
+        <h3>HealthProofAI</h3>
+        <p>A responsible LLM-RAG framework for emergency-department triage decision support. It grounds recommendations in clinical guidelines, verifies them with natural-language inference, tests for demographic fairness and keeps a cryptographic audit trail of every inference. Built and evaluated on MIMIC-IV ED data and published in IEEE Access (2026).</p>
+        <p class="stack">LLMs, RAG, NLI, MIMIC-IV ED, fairness evaluation, blockchain provenance</p>
+        <a class="btn" href="https://github.com/mutsh/HealthProofAI-Responsible-LLM-RAG-EmergencyTriage" target="_blank" rel="noopener noreferrer">View source on GitHub</a>
+      </div>
+      <div class="results" aria-label="Evaluation results">
+        <div><strong>0.81</strong><span>Recall@5 for guideline retrieval</span></div>
+        <div><strong>0.62</strong><span>NLI faithfulness score between answer and sources</span></div>
+        <div><strong>100%</strong><span>of inferences verifiable from the audit ledger</span></div>
+      </div>
+    </article>
+
+    <div class="group">
+      <h3>Clinical and health AI<small>Decision support that clinicians can inspect</small></h3>
+      <div class="projects">
+        <div class="project">
+          <h4><a href="https://github.com/mutsh/CareSense_Agnetic_AI" target="_blank" rel="noopener noreferrer">CareSense</a></h4>
+          <p>A multi-agent research system that scans medical literature, extracts structured PICO evidence, links it to FHIR patient cohorts and writes short evidence briefs.</p>
+          <p class="stack">Python, Microsoft Agent Framework, FHIR</p>
+        </div>
+        <div class="project">
+          <h4>CausalRadProof <span style="font-weight:400;color:var(--muted);font-size:.9rem">(in progress)</span></h4>
+          <p>Interpretable chest X-ray report generation. A layer of radiologist-validated concepts and a causal graph sit between image and report, so each sentence can be traced to what the model saw.</p>
+          <p class="stack">Concept bottleneck models, causal DAGs, Grad-CAM, NLI</p>
+        </div>
+        <div class="project">
+          <h4><a href="https://github.com/mutsh/HealthMate_AI" target="_blank" rel="noopener noreferrer">HealthMate AI</a></h4>
+          <p>A lightweight command-line health assistant for reminders, symptom information, health tips and emergency guidance.</p>
+          <p class="stack">Python, AI agents, task automation</p>
+        </div>
+        <div class="project">
+          <h4><a href="https://github.com/mutsh/explainable-rag-mcp" target="_blank" rel="noopener noreferrer">Explainable RAG with MCP</a></h4>
+          <p>Retrieval-augmented generation that exposes what was retrieved and why, using the Model Context Protocol to make each step inspectable.</p>
+          <p class="stack">RAG, MCP, explainable AI, LLM evaluation</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="group">
+      <h3>Agents and security<small>Autonomous systems for defenders</small></h3>
+      <div class="projects">
+        <div class="project">
+          <h4><a href="https://github.com/mutsh/VANTAGE" target="_blank" rel="noopener noreferrer">VANTAGE</a></h4>
+          <p>A multi-agent system for vulnerability assessment and threat intelligence, with orchestration and observability for security operations.</p>
+          <p class="stack">Python, LangChain, LangGraph, SIEM</p>
+        </div>
+        <div class="project">
+          <h4><a href="https://github.com/mutsh/SentinelMAS-Live" target="_blank" rel="noopener noreferrer">SentinelMAS Live</a></h4>
+          <p>Live multi-agent monitoring for security events.</p>
+          <p class="stack">Multi-agent systems, monitoring</p>
+        </div>
+        <div class="project">
+          <h4><a href="https://github.com/mutsh/XAI_Intrusion_Detection_Systems_IoTs" target="_blank" rel="noopener noreferrer">Explainable intrusion detection for IoT</a></h4>
+          <p>Intrusion-detection models for IoT and medical devices whose alerts come with explanations an analyst can act on.</p>
+          <p class="stack">XAI, machine learning, IoT security</p>
+        </div>
+        <div class="project">
+          <h4><a href="https://github.com/mutsh/Customer_Feedback_Agent_RAG" target="_blank" rel="noopener noreferrer">Customer feedback RAG agent</a></h4>
+          <p>Turns large collections of customer feedback into fast answers that cite the original comments.</p>
+          <p class="stack">LangChain, embeddings, vector search</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="group">
+      <h3>Blockchain for health data<small>Consent, access and provenance</small></h3>
+      <div class="projects">
+        <div class="project">
+          <h4><a href="https://github.com/mutsh/AI-Blockchain" target="_blank" rel="noopener noreferrer">AI + blockchain for pharmacogenomics</a></h4>
+          <p>Drug-sensitivity prediction from genomic data with role-based access, patient consent and verifiable prediction records on Ethereum. Basis of a Scientific Reports paper.</p>
+          <p class="stack">Python, Flask, scikit-learn, Solidity</p>
+        </div>
+        <div class="project">
+          <h4>Smart-contract security assessment</h4>
+          <p>A Python tool that audits the GenomicDataAccess Solidity contract for access-control and security weaknesses.</p>
+          <p class="stack">Python, Solidity, security analysis</p>
+        </div>
+        <div class="project">
+          <h4>GenChainIO</h4>
+          <p>Blockchain-based genomic data management, filed as a patent through the University of Southern Denmark (pending, filed November 2025).</p>
+          <p class="stack">Patent pending</p>
+        </div>
+        <div class="project">
+          <h4><a href="https://github.com/mutsh/fullstack-zkevm" target="_blank" rel="noopener noreferrer">Full-stack zkEVM</a></h4>
+          <p>An end-to-end application on a zero-knowledge EVM rollup.</p>
+          <p class="stack">zkEVM, smart contracts, JavaScript</p>
+        </div>
+      </div>
+    </div>
+
+    <details class="repos">
+      <summary>All public repositories (18)</summary>
+      <ul>
+        <li><a href="https://github.com/mutsh/HealthProofAI-Responsible-LLM-RAG-EmergencyTriage">HealthProofAI</a> <span>Responsible LLM-RAG triage</span></li>
+        <li><a href="https://github.com/mutsh/VANTAGE">VANTAGE</a> <span>Multi-agent threat intelligence</span></li>
+        <li><a href="https://github.com/mutsh/CareSense_Agnetic_AI">CareSense_Agnetic_AI</a> <span>Clinical evidence agents</span></li>
+        <li><a href="https://github.com/mutsh/explainable-rag-mcp">explainable-rag-mcp</a> <span>Explainable RAG and MCP</span></li>
+        <li><a href="https://github.com/mutsh/HealthMate_AI">HealthMate_AI</a> <span>Health assistant agent</span></li>
+        <li><a href="https://github.com/mutsh/AI-Agents">AI-Agents</a> <span>Agent implementations</span></li>
+        <li><a href="https://github.com/mutsh/AI-Blockchain">AI-Blockchain</a> <span>AI predictions with on-chain audit</span></li>
+        <li><a href="https://github.com/mutsh/Customer_Feedback_Agent_RAG">Customer_Feedback_Agent_RAG</a> <span>Feedback analysis with RAG</span></li>
+        <li><a href="https://github.com/mutsh/SentinelMAS-Live">SentinelMAS-Live</a> <span>Live security monitoring</span></li>
+        <li><a href="https://github.com/mutsh/trustmas-er">trustmas-er</a> <span>Trustworthy multi-agent systems</span></li>
+        <li><a href="https://github.com/mutsh/XAI_Intrusion_Detection_Systems_IoTs">XAI_Intrusion_Detection_Systems_IoTs</a> <span>Explainable IoT intrusion detection</span></li>
+        <li><a href="https://github.com/mutsh/fullstack-zkevm">fullstack-zkevm</a> <span>Zero-knowledge EVM app</span></li>
+        <li><a href="https://github.com/mutsh/Blockchain-DAPPs">Blockchain-DAPPs</a> <span>Decentralised applications</span></li>
+        <li><a href="https://github.com/mutsh/Blockchain">Blockchain</a> <span>Blockchain exercises</span></li>
+        <li><a href="https://github.com/mutsh/Machine-Learning-AI-Models">Machine-Learning-AI-Models</a> <span>ML model implementations</span></li>
+        <li><a href="https://github.com/mutsh/500-AI-Agents-Projects">500-AI-Agents-Projects</a> <span>Agent project collection</span></li>
+        <li><a href="https://github.com/mutsh/Python_part2">Python_part2</a> <span>Python exercises</span></li>
+        <li><a href="https://github.com/mutsh/mutsh.github.io">mutsh.github.io</a> <span>This website</span></li>
+      </ul>
+    </details>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Skills</h2>
+      <p>The tools I use to take an AI system from research idea to something people can rely on.</p>
+    </div>
+    <div class="skills">
+      <div class="skill"><h3>Agentic and generative AI</h3><p><b>LLMs, RAG, multi-agent systems</b>, prompt and context engineering, tool calling, Model Context Protocol, Claude API, LangGraph, Microsoft Agent Framework, Copilot Studio</p></div>
+      <div class="skill"><h3>Machine learning</h3><p><b>Python, PyTorch, TensorFlow, Hugging Face Transformers</b>, fine-tuning (including vision-language models), scikit-learn, pandas, NumPy, knowledge graphs, Bayesian inference</p></div>
+      <div class="skill"><h3>Evaluation and trustworthy AI</h3><p><b>Groundedness, faithfulness and hallucination checks</b>, retrieval evaluation, NLI, explainable AI, bias and fairness testing, guardrails, human-in-the-loop, EU AI Act and GDPR alignment</p></div>
+      <div class="skill"><h3>Data and retrieval</h3><p><b>SQL, vector databases (ChromaDB)</b>, embeddings, MySQL, Oracle, Power BI, FHIR, MIMIC-IV</p></div>
+      <div class="skill"><h3>Engineering and delivery</h3><p><b>Docker, GitHub Actions, CI/CD, Azure</b>, Flask and REST APIs, LangSmith, Ollama, n8n, Claude Code; Java, JavaScript, React, C/C++, R</p></div>
+      <div class="skill"><h3>Blockchain and security</h3><p><b>Solidity, smart contracts, Ethereum, zkEVM</b>, cryptography, network security, SIEM monitoring, incident response</p></div>
+      <div class="skill"><h3>Project leadership</h3><p><b>PMP-certified delivery</b> of large digital-transformation programmes with Ernst &amp; Young, ServiceNow change management, stakeholder workshops and training</p></div>
+      <div class="skill"><h3>Certifications</h3><p><b>PMP, CISA, CCNA</b>, Hugging Face LLM course, AI Agents (365 Data Science), Anthropic: Building with the Claude API, Model Context Protocol, AI Fluency</p></div>
+    </div>
+    <div class="learning">
+      <h3>Currently learning</h3>
+      <p>Databricks Fundamentals (October 2026), to add lakehouse data engineering to my AI platform work.</p>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Experience</h2>
+      <p>Research, teaching and fourteen years of hands-on technology delivery.</p>
+    </div>
+    <ol class="timeline">
+      <li>
+        <div class="when"><b>2023 – present</b>Odense, Denmark</div>
+        <div>
+          <h3>PhD research fellow and assistant lecturer</h3>
+          <div class="org">University of Southern Denmark</div>
+          <ul>
+            <li>Research on LLMs, agentic AI and trustworthy AI for secure, explainable healthcare decision support; PhD completed February 2026.</li>
+            <li>Designed multi-agent systems combining RAG, context engineering, tools and orchestration.</li>
+            <li>Developed methods for bias detection, robustness, explainability and hallucination mitigation.</li>
+            <li>Supervised master's students and delivered more than 395 hours of AI, Python and machine-learning teaching.</li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <div class="when"><b>Oct – Dec 2025</b>Dublin, Ireland</div>
+        <div>
+          <h3>Visiting research fellow</h3>
+          <div class="org">Technological University Dublin</div>
+          <ul>
+            <li>Co-designed generative-AI language-learning tools with older adults in the Age-Friendly AI initiative.</li>
+            <li>Evaluated responsible GenAI deployment in healthcare against explainability and auditability benchmarks.</li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <div class="when"><b>2014 – 2023</b>Karachi, Pakistan</div>
+        <div>
+          <h3>IT project manager</h3>
+          <div class="org">Science &amp; Information Technology Department</div>
+          <ul>
+            <li>Led four large-scale digital-transformation and software-automation programmes, delivered in partnership with Ernst &amp; Young.</li>
+            <li>Architected 20 enterprise AI solutions collectively supporting $2M in business processes.</li>
+            <li>Ran change requests and root-cause analysis in ServiceNow, and led stakeholder workshops and training.</li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <div class="when"><b>2016 – 2023</b>Karachi, Pakistan</div>
+        <div>
+          <h3>Visiting lecturer</h3>
+          <div class="org">Sindh Madressatul Islam University</div>
+          <ul>
+            <li>Taught artificial intelligence, Python, data structures, software engineering and information systems to classes of 30 to 60 students, in person and online.</li>
+            <li>Wrote my own lectures, labs and assessments, and supervised undergraduate research.</li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <div class="when"><b>2012 – 2014</b>Hyderabad, Pakistan</div>
+        <div>
+          <h3>Network administrator</h3>
+          <div class="org">District &amp; Sessions Court, Judiciary Department</div>
+          <ul>
+            <li>Ran SIEM monitoring, incident response and CSIRT coordination.</li>
+            <li>Designed the court's networks and led a SQL-based e-court database system.</li>
+          </ul>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="publications">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Publications</h2>
+      <p>Selected papers. The full list is on <a href="https://scholar.google.com/citations?user=zo-Pg-8AAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a>.</p>
+    </div>
+    <ol class="pubs">
+      <li><div class="yr">2026</div><div><span class="t">HealthProofAI: a responsible LLM-RAG framework for emergency-triage decision support</span><span class="v">IEEE Access</span></div></li>
+      <li><div class="yr">2026</div><div><a class="t" href="https://doi.org/10.1038/s41598-026-53058-6">Towards convergence of AI and blockchain for personalized medicine in pharmacogenomics application</a><span class="v">Scientific Reports</span></div></li>
+      <li><div class="yr">2026</div><div><a class="t" href="https://doi.org/10.3233/SHTI260872">FairGuard: blockchain-enforced continuous fairness governance for demographically equitable LLM-based emergency triage decision support</a><span class="v">Studies in Health Technology and Informatics</span></div></li>
+      <li><div class="yr">2025</div><div><a class="t" href="https://doi.org/10.1007/s44227-025-00087-8">An overview and comparison of blockchain consensus mechanisms</a><span class="v">International Journal of Networked and Distributed Computing</span></div></li>
+      <li><div class="yr">2025</div><div><a class="t" href="https://doi.org/10.3390/healthcare13091087">A systematic literature review for blockchain-based healthcare implementations</a><span class="v">Healthcare (MDPI)</span></div></li>
+      <li><div class="yr">2025</div><div><a class="t" href="https://doi.org/10.3233/SHTI250724">A novel blockchain-based model for secure genomic data management</a><span class="v">Studies in Health Technology and Informatics</span></div></li>
+      <li><div class="yr">2023</div><div><a class="t" href="https://link.springer.com/chapter/10.1007/978-3-031-53237-5_31">A blockchain-based renewable energy authenticated marketplace: BEAM of flexibility</a><span class="v">Springer</span></div></li>
+      <li><div class="yr">2023</div><div><a class="t" href="https://www.scitepress.org/Link.aspx?doi=10.5220/0012210300003598">Explainable intrusion detection for Internet of Medical Things</a><span class="v">SCITEPRESS</span></div></li>
+      <li><div class="yr">2016</div><div><span class="t">Analyzing virtual machine live migration in application data context</span><span class="v">IJACSA</span></div></li>
+    </ol>
+  </div>
+</section>
+
+<section id="background">
+  <div class="wrap">
+    <div class="trio">
+      <div>
+        <h3>Education</h3>
+        <ul>
+          <li><b>PhD, Software Engineering</b>University of Southern Denmark, 2023–2026</li>
+          <li><b>ME, Computer Information Engineering</b>Mehran University of Engineering &amp; Technology, 2012–2015</li>
+          <li><b>BE, Computer Systems Engineering</b>Mehran University of Engineering &amp; Technology, 2008–2011</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Recognition and service</h3>
+        <ul>
+          <li><b>Research Excellence Award</b>Beijing Institute of Technology, June 2025</li>
+          <li><b>GenChainIO patent</b>Filed November 2025 through SDU, pending</li>
+          <li><b>Peer reviewer</b>Health Informatics and Digital Care Journal Stack</li>
+          <li><b>Member</b>Pakistan Engineering Council</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Teaching and languages</h3>
+        <ul>
+          <li><b>Courses taught</b>Artificial intelligence, Python, computing, mobile app development, information systems, network security</li>
+          <li><b>Languages</b>Sindhi (native), Urdu, English (fluent), Danish (learning)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div>
+      <h2>Let's build AI people can trust.</h2>
+      <p>I'm open to AI engineering, applied research and teaching roles in Denmark and beyond, and to research collaborations.</p>
+      <div class="actions" style="margin-top:2rem">
+        <a class="btn primary" href="mailto:mutishaikh@live.com">Email me</a>
+      </div>
+    </div>
+    <ul class="links">
+      <li><span>Email</span><a href="mailto:mutishaikh@live.com">mutishaikh@live.com</a></li>
+      <li><span>University</span><a href="mailto:mutsh@mmmi.sdu.dk">mutsh@mmmi.sdu.dk</a></li>
+      <li><span>GitHub</span><a href="https://github.com/mutsh" target="_blank" rel="noopener noreferrer">github.com/mutsh</a></li>
+      <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/mutishaikh/" target="_blank" rel="noopener noreferrer">linkedin.com/in/mutishaikh</a></li>
+      <li><span>Google Scholar</span><a href="https://scholar.google.com/citations?user=zo-Pg-8AAAAJ" target="_blank" rel="noopener noreferrer">scholar.google.com (zo-Pg-8AAAAJ)</a></li>
+      <li><span>Hugging Face</span><a href="https://huggingface.co/mutishaikh" target="_blank" rel="noopener noreferrer">huggingface.co/mutishaikh</a></li>
+      <li><span>ORCID</span><a href="https://orcid.org/0009-0003-9722-5862" target="_blank" rel="noopener noreferrer">0009-0003-9722-5862</a></li>
+      <li><span>ResearchGate</span><a href="https://www.researchgate.net/profile/Mutiullah-Shaikh" target="_blank" rel="noopener noreferrer">researchgate.net/profile/Mutiullah-Shaikh</a></li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Mutiullah Shaikh. Odense, Denmark.</div>
+</footer>
+
+</body>
+</html>
