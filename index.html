@@ -325,12 +325,17 @@ footer { padding: 1.5rem 0 2.5rem; color: var(--muted); font-size: .9rem; }
     </div>
 
     <div class="group">
-      <h3>Agents for business operations<small>Customer-facing assistants with humans in control</small></h3>
+      <h3>Agents for business operations<small>Assistants and automations with humans in control</small></h3>
       <div class="projects">
         <div class="project">
           <h4><a href="https://github.com/mutsh/DealerFlow-AI" target="_blank" rel="noopener noreferrer">DealerFlow AI</a></h4>
           <p>A service-booking agent for car-dealership workshops, working over web chat, SMS and WhatsApp. The language model only interprets the request; pricing, availability and bookings come from deterministic tools, every booking needs the customer's explicit yes, and safety complaints go straight to a person. Includes a manager dashboard, PII-redacted tracing, CI tests and an Azure deployment plan.</p>
-          <p class="stack">FastAPI, Qwen 2.5 (optional local router), Twilio, Docker, GitHub Actions, Azure</p>
+          <p class="stack">FastAPI, Qwen 2.5 (optional local router), Twilio, Odoo CRM, Docker, GitHub Actions, Azure</p>
+        </div>
+        <div class="project">
+          <h4><a href="https://claude.ai/artifact/DKUT74tjnKQyXjk9D5Q42J" target="_blank" rel="noopener noreferrer">Recruitment AI Ops</a> <span style="font-weight:400;color:var(--muted);font-size:.9rem">(live demo)</span></h4>
+          <p>CRM automation for an international recruitment agency. Claude reads messy applications in any language, matches candidates to open roles and drafts a reply in the candidate's own language; plain rules check required documents, and nothing is sent until a recruiter approves. A dashboard shows bottlenecks and writes a weekly leadership briefing. Designed to map onto n8n and Odoo in production.</p>
+          <p class="stack">Claude API, structured JSON output, n8n, Odoo CRM, human-in-the-loop</p>
         </div>
         <div class="project">
           <h4><a href="https://github.com/mutsh/Customer_Feedback_Agent_RAG" target="_blank" rel="noopener noreferrer">Customer feedback RAG agent</a></h4>
